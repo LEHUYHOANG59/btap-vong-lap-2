@@ -6,18 +6,20 @@
     </title>
 </head>
 <body>
+<button onclick="playGame()">Chơi</button>
+
 <h1>[*Bài tập] Luyện tập vòng lặp 01
 </h1>
 <script>
     // bai 1
-    let x;
-    for (i=1;i<=100;i++) {
-        if (i===99) {
-            alert("Da hoan thanh");
-            continue;
-        }
-        document.write(i + "<br>");
-    }
+    // let x;
+    // for (i=1;i<=100;i++) {
+    //     if (i===99) {
+    //         alert("Da hoan thanh");
+    //         continue;
+    //     }
+    //     document.write(i + "<br>");
+    // }
 
     //bai 2
     // let nhietdo=Number(prompt("Nhap nhiet do: "));
@@ -29,8 +31,95 @@
     // }
 
     //bai 3
+    // function fibonacci(n) {
+    //     let a = 0, b = 1, c;
+    //     console.log(a);
+    //     console.log(b);
+    //     for (let i = 2; i < n; i++) {
+    //         c = a + b;
+    //         console.log(c);
+    //         a = b;
+    //         b = c;
+    //     }
+    // }
+    //
+    // fibonacci(20);
+
+    // bai4
+    // function findFirstDivisibleBy5(n) {
+    //     let a = 0, b = 1, c;
+    //     for (let i = 2; ; i++) {
+    //         c = a + b;
+    //         if (c % 5 === 0) {
+    //             return c;
+    //         }
+    //         a = b;
+    //         b = c;
+    //     }
+    // }
+    //
+    // console.log(findFirstDivisibleBy5(100));
 
 
+    // bai 5
+    // function sumFibonacci(n) {
+    //     let a = 0, b = 1, c, sum = 0;
+    //     for (let i = 0; i < n; i++) {
+    //         sum += a;
+    //         c = a + b;
+    //         a = b;
+    //         b = c;
+    //     }
+    //     return sum;
+    // }
+    //
+    // console.log(sumFibonacci(20));
+
+    // bai 6
+    // function sumDivisibleBy7(n) {
+    //     let sum = 0, count = 0;
+    //     for (let i = 1; count < n; i++) {
+    //         if (i % 7 === 0) {
+    //             sum += i;
+    //             count++;
+    //         }
+    //     }
+    //     return sum;
+    // }
+    //
+    // console.log(sumDivisibleBy7(30));
+
+    // bai 7
+    // for (let i = 1; i <= 100; i++) {
+    //     if (i % 3 === 0 && i % 5 === 0) {
+    //         console.log("FizzBuzz");
+    //     } else if (i % 3 === 0) {
+    //         console.log("Fizz");
+    //     } else if (i % 5 === 0) {
+    //         console.log("Buzz");
+    //     } else {
+    //         console.log(i);
+    //     }
+    // }
+
+    // bai 8
+    function playGame() {
+        const min = parseInt(prompt("Nhập số nhỏ nhất:"));
+        const max = parseInt(prompt("Nhập số lớn nhất:"));
+        const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        let guess;
+        while (guess !== randomNum) {
+            guess = parseInt(prompt("Hãy đoán số:"));
+            if (guess < randomNum) {
+                alert("Số bạn đoán nhỏ hơn");
+            } else if (guess > randomNum) {
+                alert("Số bạn đoán lớn hơn");
+            } else {
+                alert("Chúc mừng bạn đã đoán đúng!");
+            }
+        }
+    }
 
 </script>
 </body>
